@@ -1,0 +1,20 @@
+.a {
+
+    &,
+    &:link,
+    &:visited {
+        text-decoration: none;
+        color: var(--blue-700);
+    }
+
+    &:hover {
+        color: var(--blue-400);
+        border-bottom: 1px solid var(--blue-400);
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        color: var(--blue-500);
+    }
+}

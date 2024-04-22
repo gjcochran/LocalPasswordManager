@@ -1,0 +1,44 @@
+<main class="auth">
+  <section class="auth__container">
+    <header class="auth__header-container">
+      <h2 class="auth__header">Log In</h2>
+      <div class="auth__prompt">
+        <span>No account?</span>
+        <a class="a auth__links" href="/signup">Sign up now</a>
+      </div>
+    </header>
+    <form action="/signin" class="auth__form" method="post">
+      <fieldset class="auth__subsection">
+        <label class="auth__label"for="email">Email</label>
+        <div class="auth__input-container">
+          <svg class="auth__icon">
+            <use xlink:href="/images/sprite.svg#icon-mail"></use>
+          </svg>
+          <input class="auth__input" type="email" placeholder="janesmith@gmail.com" name="email" value="<%= params[:email] %>" required>
+        </div>
+      </fieldset>
+      <fieldset class="auth__subsection">
+        <label class="auth__label" for="password">Password</label>
+        <div class="auth__input-container">
+          <svg class="auth__icon">
+            <use xlink:href="/images/sprite.svg#icon-lock"></use>
+          </svg>
+          <div class="password__box">
+            <input type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$" title="Must be minimum 8 characters and include at least 1 lowercase character, 1 uppercase character, 1 number, and one symbol (@#$%^&+=)" class="auth__input password__input" value="<%= params[:password] %>" required>
+            <div class="password__check">
+              <svg class="password__icon password__icon--hidden">
+                <use xlink:href="/images/sprite.svg#icon-view-hide"></use>
+              </svg>
+              <svg class="password__icon password__icon--shown hide">
+                <use xlink:href="/images/sprite.svg#icon-view-show"></use>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset class="auth__subsection auth__submit">
+        <button class="btn auth__btn" type="submit">Log in</button>
+      </fieldset>
+    </form>
+  </section>
+</main>

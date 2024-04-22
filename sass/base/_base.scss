@@ -1,0 +1,72 @@
+:root {
+    // COLORS
+    --white: hsl(210, 20%, 98%);
+    --off-white: hsl(220, 14%, 96%);
+    --gray-primary-light: hsl(220, 13%, 91%);
+    --gray-300: hsl(216, 12%, 84%);
+    --gray-400: hsl(218, 11%, 65%);
+    --gray-500: hsl(220, 9%, 46%);
+    --gray-500-hsl: 220 9% 46%;
+    --gray-600: hsl(215, 14%, 34%);
+    --gray-600-hsl: 215 14% 34%;
+    --gray-700: #374151;
+    --gray-primary-dark: #1f2937;
+    --gray-900: #111827;
+    --black: hsl(224, 71%, 4%);
+    --black-hsl: 224 71% 4%;
+
+    --blue-white: #f2f8fd;
+    --blue-100: #e4f0fa;
+    --blue-200: #c2e1f5;
+    --blue-300: #8cc9ed;
+    --blue-400: #4fade1;
+    --blue-500: #349dd8;
+    --blue-600: #1976b0;
+    --blue-700: #165e8e;
+    --blue-primary: #165076;
+    --blue-primary-hsl: 204 69% 27%;
+    --blue-900: #184362;
+    --blue-950: #102b41;
+
+    --green-50: #f3faf3;
+    --green-100: #e4f4e5;
+    --green-200: hsl(126, 39%, 85%);
+    --green-200-hsl: 126 39% 85%;
+    --green-300: #a0d5a7;
+    --green-400: #6eba78;
+    --green-500: #4ea65a;
+    --green-600: #388142;
+    --green-flash: #2f6637;
+    --green-800: #29522f;
+    --green-900: #234428;
+    --green-950: #0f2413;
+
+    --red-50: #fbf4f6;
+    --red-100: #f9eaf0;
+    --red-200: #f4d6e0;
+    --red-300: #ecb5c6;
+    --red-400: #de88a1;
+    --red-500: #d16380;
+    --red-600: #b54059;
+    --red-flash: #a23449;
+    --red-800: #872d3c;
+    --red-900: #712a36;
+    --red-950: #44131b;
+
+
+    // FONT
+    --default-font-size: 1.6rem;
+}
+
+html {
+    font-size: 62.5%; // ie 1rem will be 10px as default browser rem = 16px
+}
+
+body {
+    background-color: var(--off-white);
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+}

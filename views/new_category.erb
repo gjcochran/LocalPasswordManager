@@ -1,0 +1,13 @@
+<div class="form">
+  <form action="/users/<%= @user_id %>/categories" class="form__content" method="post">
+    <legend class="form__header">Create new category</legend>
+    <fieldset class="form__group">
+      <label for="category_name" class="form__prompt">Name</label>
+      <input type="text" name="category_name" class="form__input" value="<%= params[:category_name] %>" required>
+    </fieldset>
+    <fieldset class="form__submit">
+      <input type="submit" value="Save" class="form__btn form__btn--pos">
+      <a class="form__btn form__btn--neg" href="/users/<%= @user_id %>/all_logins">Cancel</a>
+    </fieldset>
+  </form>
+</div>

@@ -1,0 +1,138 @@
+.navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    background-color: var(--blue-primary);
+    color: var(--blue-white);
+    position: relative;
+
+    &__list {
+        list-style: none;
+        margin-top: 2.4rem;
+        display: flex;
+        justify-content: flex-end;
+        cursor: pointer;
+    }
+
+    &__logins {
+        position: relative;
+    }
+
+    &__icon-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &__categories {
+        position: absolute;
+        top: 5rem;
+        width: 300px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 99999;
+        background-color: var(--blue-200);
+        border: 4px solid var(--blue-300);
+        list-style: none;
+        padding: 0 4rem 2rem 4rem;
+        box-shadow: 0 1rem 2rem hsl(var(--black-hsl)/.2);
+
+        &:hover {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    &__category {
+        margin: 1rem 0;
+
+    }
+
+    &__a {
+        font-size: 2.4rem;
+    }
+
+
+    &__item {
+        position: relative;
+        font-size: 3.2rem;
+        margin-bottom: 2.4rem;
+        display: flex;
+        align-items: center;
+        padding: 0 4.8rem;
+    }
+
+    &__settings {
+        margin-left: auto;
+    }
+
+    &__link {
+
+        &,
+        &:link,
+        &:visited {
+            text-decoration: none;
+            color: currentColor;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        &:hover,
+        &:active {
+            color: var(--gray-primary-light);
+        }
+    }
+
+    &__icon-container:hover + &__categories,
+    &__icon-container:active + &__categories {
+        visibility: visible;
+        opacity: 1;
+    }
+
+
+    &__link {
+        display: inline-block;
+    }
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+        fill: currentColor;
+        display: inline-block;
+        margin-right: 1rem;
+
+        &--last {
+            margin-right: 0;
+        }
+
+
+    }
+
+    &__input {
+
+        &,
+        &:link,
+        &:visited {
+            color: currentColor;
+            background-color: var(--blue-primary);
+            border: none;
+            padding: .5rem 1rem;
+            display: inline-block;
+            border-radius: 1rem;
+            transition: all .2s;
+            font-size: inherit;
+            cursor: pointer;
+        }
+
+        &:hover {}
+
+        &:active,
+        &:focus {
+            outline: none;
+            transform: translateY(-1px);
+            box-shadow: 0 .5rem 1rem hsl(var(--black-hsl)/.2);
+            background-color: var(--blue-600);
+        }
+    }
+}

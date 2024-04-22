@@ -1,0 +1,101 @@
+<div class="logins">
+  <table class="logins__table">
+    <thead class="logins__head">
+      <tr class="logins__heading">
+        <%# two extra on each end for select (to edit) and delete %>
+        <th class="logins__col-heading logins__sort">
+          <b>Name</b>
+          <div class="logins__container">
+            <a class="a" href="/users/<%= @user_id %>/all_logins?reverse=false">
+              <svg class="logins__icon">
+                <use xlink:href="/images/sprite.svg#icon-chevron-up"></use>
+              </svg>
+            </a>
+            <a class="a" href="/users/<%= @user_id %>/all_logins?reverse=true">
+              <svg class="logins__icon">
+                <use xlink:href="/images/sprite.svg#icon-chevron-down"></use>
+              </svg>
+            </a>
+          </div>
+        </th>
+        <th class="logins__col-heading">Email</th>
+        <th class="logins__col-heading">Username</th>
+        <th class="logins__col-heading">Password</th>
+        <th class="logins__col-heading">Category</th>
+        <th class="logins__col-heading">Note</th>
+        <th class="logins__col-heading"></th>
+        <th class="logins__col-heading"></th>
+      </tr>
+    </thead>
+    <tbody class="logins__body">
+      <% @logins.each do |login| %>
+        <tr class="logins__row">
+          <td class="logins__cell">
+            <a class="a" href="<%= login[:url] %>"><%= login[:login_name] %></a>
+          </td>
+          <td class="logins__cell">
+            <%= login[:email] %>
+          </td>
+          <td class="logins__cell">
+            <%= login[:username] %>
+          </td>
+          <td class="logins__cell">
+            <span class="logins__password"><%= login[:password] %></span>
+          </td>
+          <td class="logins__cell">
+            <%= login[:category] %>
+          </td>
+          <td class="logins__cell">
+            <%= login[:note] %>
+          </td>
+          <td class="logins__cell logins__cell--edit">
+            <a href="/users/<%= @user_id %>/all_logins/<%= login[:id] %>/edit" class="a" >
+              <svg class="logins__icon">
+                <use xlink:href="/images/sprite.svg#icon-edit"></use>
+              </svg>
+            </a>
+          </td>
+          <td class="logins__cell logins__cell--delete">
+            <form action="/users/<%= @user_id %>/all_logins/<%= login[:id] %>/delete" class="delete" method="post">
+              <button class="logins__delete">
+                <svg class="logins__icon">
+                  <use xlink:href="/images/sprite.svg#icon-trash"></use>
+                </svg>
+              </button>
+            </form>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<% content_for :header_title do %>
+<% end %>
+<% content_for :toolbar_links do %>
+  <div class="main__link">
+    <a class="a main__a" href="/users/<%= @user_id %>/all_logins/new" >New Login</a>
+  </div>
+  <div class="main__link">
+    <a class="a main__a" href="/users/<%= @user_id %>/categories/new" >New Category</a>
+  </div>
+<% end %>
+<% content_for :page_links do %>
+  <div class="page">
+    <% unless page_num <= 1 %>
+      <a class="a page__a" href="/users/<%= @user_id %>/all_logins?page=<%= page_num - 1 %>">
+        <svg class="page__icon">
+          <use xlink:href="/images/sprite.svg#icon-chevron-left"></use>
+        </svg>
+        <span>Previous</span>
+      </a>
+    <% end %>
+    <% unless page_num >= max_total_pages(@user_id, @category_id) %>
+      <a class="a page__a" href="/users/<%= @user_id %>/all_logins?page=<%= page_num + 1 %>">
+        <span>Next</span>
+        <svg class="page__icon">
+          <use xlink:href="/images/sprite.svg#icon-chevron-right"></use>
+        </svg>
+      </a>
+    <% end %>
+  </div>
+<% end %>

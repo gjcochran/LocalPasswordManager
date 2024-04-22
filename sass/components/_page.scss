@@ -1,0 +1,18 @@
+.page {
+    display: inline-block;
+    display: flex;
+    gap: 3.2rem;
+    margin-top: 2.4rem;
+    font-weight: 500;
+
+    &__a {
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: currentColor;
+    }
+}

@@ -1,0 +1,40 @@
+  <nav class="navigation">
+  <ul class="navigation__list">
+    <li class="navigation__item navigation__logins">
+      <div class="navigation__icon-container">
+        <svg class="navigation__icon">
+          <use xlink:href="/images/sprite.svg#icon-lock"></use>
+        </svg>
+        <span>Logins</span>
+      </div>
+      <ul class="navigation__categories">
+        <% @categories.sort_by { |hsh| hsh[:category_name] }.each do |category| %>
+          <li class="navigation_category">
+            <a class="a navigation__a" href="/users/<%= @user_id %>/categories/<%= category[:id] %>/logins">
+              <%= category[:category_name] %>
+            </a>
+          </li>
+        <% end %>
+        <li class="navigation_category">
+          <a class="a navigation__a" href="/users/<%= @user_id %>/all_logins" class="navigation__link">View All</a>
+        </li>
+      </ul>
+    </li>
+    <li class="navigation__item navigation__settings">
+      <a class="navigation__link" href="/users/<%= @user_id %>/settings" class="navigation__link">
+        <svg class="navigation__icon">
+          <use xlink:href="/images/sprite.svg#icon-cog"></use>
+        </svg>
+        <span>Settings</span>
+      </a>
+    </li>
+    <li class="navigation__item">
+      <svg class="navigation__icon navigation__icon--last">
+        <use xlink:href="/images/sprite.svg#icon-log-out"></use>
+      </svg>
+      <form action="/users/<%= @user_id %>/signout" class="navigation__link" method="post">
+        <input type="submit" class="navigation__input" value="Sign out">
+      </form>
+    </li>
+  </ul>
+</nav>

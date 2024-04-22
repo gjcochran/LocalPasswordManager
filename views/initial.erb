@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Secure Access Manager</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;300;400;500;600;700;800&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/reset.css">
+    <link rel="stylesheet" href="/stylesheets/application.css">
+    <script src="/javascripts/jquery-3.7.1.min.js"></script>
+    <script src="/javascripts/app.js"></script>
+  </head>
+  <body>
+    <% if session[:success] %>
+      <div class="flash flash--success">
+        <p class="flash__text"><%= session.delete(:success) %></p>
+      </div>
+    <% end %>
+    <% if session[:errors].flatten.any? %>
+      <div class="flash flash--error">
+        <% session[:errors].flatten.each do |error| %>
+          <p class="flash__text"><%= error %></p>
+        <% end %>
+        <% session[:errors].clear %>
+      </div>
+    <% end %>
+    <%== yield %>
+  </body>
+</html>

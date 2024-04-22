@@ -1,0 +1,117 @@
+.auth {
+    // background-color: hsl(var(--green-200-hsl) / 0.5);
+    font-size: 2.4rem;
+    height: 100%;
+    padding: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-image: linear-gradient(hsl(var(--green-200-hsl) / 0.5),
+            hsl(var(--green-200-hsl) / 0.5)),
+        url(../images/vault.jpg);
+    // background-size: contain;
+    // background-repeat: no-repeat;
+    // background-size: 100% 100%;
+    background-size: cover;
+
+
+
+    &__container {
+        background-color: var(--off-white);
+        border: 3px solid var(--gray-200);
+        border-radius: 1rem;
+        box-shadow: 2px 2px 2px hsl(var(--gray-500-hsl), .15);
+        padding: 40px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        max-width: 40%;
+    }
+
+
+
+    &__header-container {
+        align-self: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    &__header {
+        font-size: 7.2rem;
+        margin-bottom: 3rem;
+        line-height: 1;
+    }
+
+    &__prompt {
+        font-size: 1.6rem;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__links {
+
+        &,
+        &:link,
+        &:visited {
+            color: var(--green-600);
+        }
+
+        &:hover,
+        &:active {
+            color: var(--green-400);
+            border-bottom: 1px solid var(--green-400);
+        }
+    }
+
+    &__subsection {
+        border: none;
+        position: relative;
+        text-align: center;
+    }
+
+    &__label {
+        opacity: 0;
+        position: absolute;
+    }
+
+    &__input-container {
+        position: relative;
+        border-radius: 5px;
+    }
+
+    &__input {
+        width: 100%;
+    }
+
+    &__icon {
+        height: 3rem;
+        width: 3rem;
+        position: absolute;
+        top: .6rem;
+        left: 1rem;
+        fill: currentColor;
+        display: inline-block;
+        stroke-width: 0;
+        stroke: currentColor;
+        z-index: 2;
+    }
+
+    &__input {
+        padding-left: 5rem;
+        min-height: 1.2rem;
+        color: inherit;
+        font: inherit;
+        cursor: pointer;
+    }
+
+    &__btn {
+        align-self: center;
+    }
+}

@@ -1,0 +1,51 @@
+<div class="form">
+  <form action="/users/<%= @user_id %>/all_logins/<%= @login_id %>" class="form__content" method="post">
+    <legend class="form__header">Editing login item "<%= @login[:login_name] %>"</legend>
+    <fieldset class="form__group">
+      <label for="login_name" class="form__prompt">Name</label>
+      <input type="text" name="login_name" class="form__input" value="<%= params[:login_name] || @login[:login_name] %>" required>
+    </fieldset>
+    <fieldset class="form__group">
+      <label for="url" class="form__prompt">Website</label>
+      <input type="url" name="url" class="form__input" placeholder="https://www.example.com" value="<%= params[:url] || @login[:url] %>" required>
+    </fieldset>
+    <fieldset class="form__group">
+      <label for="email" class="form__prompt">Email</label>
+      <input type="email" name="email" class="form__input" value="<%= params[:email] || @login[:email] %>"required>
+    </fieldset>
+    <fieldset class="form__group">
+      <label for="username" class="form__prompt">Username</label>
+      <input type="text" name="username" class="form__input" value="<%= params[:username] || @login[:username] %>">
+    </fieldset>
+    <fieldset class="form__group">
+      <label for="password" class="form__prompt">Password</label>
+      <div class="password__box">
+        <input type="password" name="password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=]).{8,}$" title="Must be minimum 8 characters and include at least 1 lowercase character, 1 uppercase character, 1 number, and one symbol (@#$%^&+=)" class="form__input password__input" value="<%= params[:password] || @login[:password] %>" required>
+        <div class="password__check">
+          <svg class="password__icon password__icon--hidden">
+            <use xlink:href="/images/sprite.svg#icon-view-hide"></use>
+          </svg>
+          <svg class="password__icon password__icon--shown hide">
+            <use xlink:href="/images/sprite.svg#icon-view-show"></use>
+          </svg>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset class="form__group">
+      <label for="category" class="form__prompt">Category</label>
+      <select id="category_name" name="category_name" class="form__input" required>
+        <% @categories.each do |category| %>
+          <option <% if category[:category_name] == params[:category_name] || category[:id].to_i == @category_id.to_i %>selected<% end %>><%= category[:category_name] %></option>
+          <% end %>
+        </select>
+      </fieldset>
+      <fieldset class="form__group">
+        <label for="note" class="form__prompt">Note</label>
+        <textarea id="note" name="note" class="form__input" rows="3" cols="35"><%= params[:note] || @login[:note] %></textarea>
+      </fieldset>
+      <fieldset class="form__submit">
+        <input type="submit" value="Save" class="form__btn form__btn--pos">
+        <a class="form__btn form__btn--neg" href="/users/<%= @user_id %>/all_logins">Cancel</a>
+      </fieldset>
+    </form>
+  </div>

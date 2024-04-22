@@ -1,0 +1,35 @@
+<%# tbd - goal will be to provide a form to edit login info %>
+<%# plus to add additional personal info (optional) such as name, address, age %>
+<% content_for :header_title do %>
+  User Settings
+<% end %>
+<% content_for :toolbar_links do %>
+  <div class="main__settings">
+    <div class="main__link">
+      <a class="a main__a" href="/users/<%= @user_id %>/edit/email" class="edit">
+        <svg class="logins__icon main__icon">
+          <use xlink:href="/images/sprite.svg#icon-mail"></use>
+        </svg>
+        <span>Edit User Email</span>
+      </a>
+    </div>
+    <div class="main__link">
+      <a class="a main__a" href="/users/<%= @user_id %>/edit/password" class="edit">
+        <svg class="logins__icon main__icon">
+          <use xlink:href="/images/sprite.svg#icon-lock"></use>
+        </svg>
+        <span>Edit User Password</span>
+      </a>
+    </div>
+    <div class="main__link">
+      <form action="/users/<%= @user_id %>/delete"  class="delete" method="post">
+        <button class="logins__delete main__button">
+          <svg class="logins__icon main__icon">
+            <use xlink:href="/images/sprite.svg#icon-trash"></use>
+          </svg>
+          <span>Delete User Account</span>
+        </button>
+      </form>
+    </div>
+  </div>
+<% end %>

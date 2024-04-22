@@ -1,0 +1,26 @@
+.flash {
+    max-width: 500px;
+    padding: 1.2rem 2.4rem;
+    // margin: 1.5em auto;
+    // color: var(--main-text);
+    color: var(--blue-white);
+    text-align: center;
+    border-radius: 3px;
+    // box-shadow: 2px 2px 2px ;
+    position: absolute;
+    left: 40%;
+
+    &__text {
+        font-size: 1.6rem;
+    }
+
+    &--success {
+        background-color: var(--green-flash);
+        top: 9.6rem;
+    }
+
+    &--error {
+        background-color: var(--red-flash);
+        top: 10.8rem;
+    }
+}

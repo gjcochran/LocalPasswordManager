@@ -1,0 +1,94 @@
+.form {
+    box-shadow: 0 1rem 2rem hsl(var(--black-hsl)/.2);
+    border-radius: 1rem;
+    width: 40%;
+    margin: 0 auto;
+
+    &__content {
+        padding: 3.2rem 4.8rem;
+    }
+
+    &__header {
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 2.4rem;
+        text-transform: capitalize;
+    }
+
+    &__group {
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+        color: currentColor;
+    }
+
+
+    &__prompt {
+        margin-right: 1.2rem;
+    }
+
+
+    &__input {
+        padding: .4rem .8rem;
+        color: currentColor;
+        cursor: pointer;
+    }
+
+    &__submit {
+        display: flex;
+        gap: 1.6rem;
+        border: none;
+        justify-content: center;
+        margin-top: 2.4rem;
+    }
+
+    &__btn {
+        &--pos {
+            background-color: var(--green-300);
+
+            &:active,
+            &:focus {
+                outline: none;
+                transform: translateY(-1px);
+                box-shadow: 0 .5rem 1rem hsl(var(--black-hsl)/.2);
+                background-color: var(--green-600);
+            }
+        }
+
+        &--neg {
+            background-color: var(--gray-300);
+
+            &:active,
+            &:focus {
+                outline: none;
+                transform: translateY(-1px);
+                box-shadow: 0 .5rem 1rem hsl(var(--black-hsl)/.2);
+                background-color: var(--gray-600);
+            }
+        }
+
+        &,
+        &:link,
+        &:visited {
+            padding: 1.2rem 2.4rem;
+            width: 14.4rem;
+            text-align: center;
+            color: var(--blue-700);
+            text-transform: uppercase;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 2rem;
+            transition: all .2s;
+            font-size: 2rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        &:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 1rem 2rem hsl(var(--black-hsl)/.2);
+        }
+    }
+}
