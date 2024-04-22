@@ -35,4 +35,4 @@ I used the bcrypt gem to hash user signin passwords. The nature of this website 
 2. Host database in a secure cloud environment like AWS (https://aws.amazon.com/security/)
 3. Encryption of user login data
     - to note... with bcrypt there is no way to decrypt a hashed password. As I wanted to demonstrate an app where a user could view their stored logins information, this was not possible with bcrypt
-# ls_backend_project_password_manager
+
